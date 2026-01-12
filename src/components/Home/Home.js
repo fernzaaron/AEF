@@ -6,7 +6,7 @@ import Home2 from "./Home2";
 import Type from "./Type";
 import Techstack from "../About/Techstack";
 import Github from "../About/Github";
-import { AiOutlineMail, AiFillPhone } from "react-icons/ai";
+import { AiOutlineMail, AiFillPhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
 
 function Home() {
@@ -50,12 +50,33 @@ function Home() {
       <Container>
         <Row style={{ paddingTop: "50px", paddingBottom: "80px" }}>
           <Col md={12} className="home-about-social">
-            <h1>Contact</h1>
+            <h1>Contact & Social</h1>
             <p>
-              Reach out via <span className="purple">website</span>,
-              <span className="purple"> email</span>, or <span className="purple">phone</span>.
+              Connect with me on <span className="purple">GitHub</span>,
+              <span className="purple"> LinkedIn</span>, or reach out via
+              <span className="purple"> email</span> and <span className="purple">phone</span>.
             </p>
             <ul className="home-about-social-links">
+              <li className="social-icons">
+                <a
+                  href="https://github.com/fernzaaron"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <AiFillGithub />
+                </a>
+              </li>
+              <li className="social-icons">
+                <a
+                  href="https://www.linkedin.com/in/aaronfernandez547/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour  home-social-icons"
+                >
+                  <AiFillLinkedin />
+                </a>
+              </li>
               <li className="social-icons">
                 <a
                   href="https://aef-sigma.vercel.app/"

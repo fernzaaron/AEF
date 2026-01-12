@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { AiOutlineMail, AiFillPhone } from "react-icons/ai";
+import { AiOutlineMail, AiFillPhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
 
 function Footer() {
@@ -17,6 +17,26 @@ function Footer() {
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
+            <li className="social-icons">
+              <a
+                href="https://github.com/fernzaaron"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <AiFillGithub />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="https://www.linkedin.com/in/aaronfernandez547/"
+                style={{ color: "white" }}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <AiFillLinkedin />
+              </a>
+            </li>
             <li className="social-icons">
               <a
                 href="https://aef-sigma.vercel.app/"
