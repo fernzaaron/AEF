@@ -58,7 +58,7 @@ function Home() {
             <ul className="home-about-social-links">
               <li className="social-icons">
                 <a
-                  href="https://port-web-personal.onrender.com"
+                  href="https://aef-sigma.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"

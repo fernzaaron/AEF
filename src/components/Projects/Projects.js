@@ -37,7 +37,7 @@ function Projects() {
               isBlog={false}
               title="Personal Portfolio"
               description="Responsive portfolio site showcasing skills, experience, and projects. Built with React, deployed on Render."
-              demoLink="https://port-web-personal.onrender.com"
+              demoLink="https://aef-sigma.vercel.app/"
             />
           </Col>
           
