@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Lost and Found icon">
+  <rect width="800" height="600" fill="#0d0d0d"/>
+  <g transform="translate(140,140)">
+    <circle cx="180" cy="180" r="120" stroke="#a17acb" stroke-width="16" fill="none"/>
+    <line x1="270" y1="270" x2="380" y2="380" stroke="#a17acb" stroke-width="20" stroke-linecap="round"/>
+    <rect x="420" y="200" width="160" height="120" rx="16" ry="16" fill="#a17acb" opacity="0.15" stroke="#a17acb" stroke-width="10"/>
+    <circle cx="460" cy="240" r="10" fill="#a17acb"/>
+  </g>
+  <text x="50%" y="560" fill="#a17acb" font-size="42" font-family="Segoe UI, Roboto, Arial" text-anchor="middle">Lost & Found Hub</text>
+</svg>
