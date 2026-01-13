@@ -8,12 +8,21 @@ import Techstack from "../About/Techstack";
 import Github from "../About/Github";
 import { AiOutlineMail, AiFillPhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
+import Button from "react-bootstrap/Button";
 
 function Home() {
   return (
     <section>
       <Container fluid className="home-section" id="home">
         <Particle />
+        {/* Animated Background Elements */}
+        <div className="floating-orb floating-orb-1"></div>
+        <div className="floating-orb floating-orb-2"></div>
+        <div className="floating-orb floating-orb-3"></div>
+        <div className="geometric-shape triangle"></div>
+        <div className="geometric-shape square"></div>
+        <div className="geometric-shape circle"></div>
+        
         <Container className="home-content">
           <Row>
             <Col md={7} className="home-header">
@@ -38,7 +47,7 @@ function Home() {
               <img
                 src={homeLogo}
                 alt="home pic"
-                className="img-fluid"
+                className="img-fluid home-logo-image"
                 style={{ maxHeight: "450px" }}
               />
             </Col>
@@ -63,6 +72,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
+                  title="GitHub Profile"
                 >
                   <AiFillGithub />
                 </a>
@@ -73,6 +83,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
+                  title="LinkedIn Profile"
                 >
                   <AiFillLinkedin />
                 </a>
@@ -83,6 +94,7 @@ function Home() {
                   target="_blank"
                   rel="noreferrer"
                   className="icon-colour  home-social-icons"
+                  title="Portfolio Website"
                 >
                   <CgWebsite />
                 </a>
@@ -91,6 +103,7 @@ function Home() {
                 <a
                   href="mailto:aaron.fernandez547@gmail.com"
                   className="icon-colour  home-social-icons"
+                  title="Send Email"
                 >
                   <AiOutlineMail />
                 </a>
@@ -99,6 +112,7 @@ function Home() {
                 <a
                   href="tel:+16478388803"
                   className="icon-colour  home-social-icons"
+                  title="Call"
                 >
                   <AiFillPhone />
                 </a>

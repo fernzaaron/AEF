@@ -14,7 +14,7 @@ function Projects() {
           Featured <strong className="purple">Projects</strong>
         </h1>
         <p style={{ color: "white" }}>
-          A selection of projects aligned with my focus areas.
+          Showcasing full-stack applications with a focus on security, accessibility, and user experience.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
@@ -24,7 +24,8 @@ function Projects() {
               imgAlt="Lost and Found Hub — custom project image"
               isBlog={false}
               title="Lost and Found Hub"
-              description="Full-stack app with Node.js, Express, MongoDB. Secure user authentication with bcrypt, role-based access control, RESTful APIs. Deployed on Render."
+              description="Full-stack web application for reporting and tracking lost/found items. Features secure user authentication with bcrypt, role-based access control (RBAC), RESTful APIs, and MongoDB database. Implements WCAG accessibility standards and deployed on Render."
+              techStack="Node.js, Express, MongoDB, React, JWT Auth"
               demoLink="https://lost-and-found-hub.onrender.com/users/login"
             />
           </Col>
@@ -36,7 +37,8 @@ function Projects() {
               imgAlt="Personal Portfolio — custom project image"
               isBlog={false}
               title="Personal Portfolio"
-              description="Responsive portfolio site showcasing skills, experience, and projects. Built with React, deployed on Render."
+              description="Modern, responsive portfolio website showcasing technical skills, projects, and professional experience. Built with React and Bootstrap, featuring smooth animations, dark theme design, and optimized performance. Deployed on Vercel."
+              techStack="React, Bootstrap, React Icons, Vercel"
               demoLink="https://aef-sigma.vercel.app/"
             />
           </Col>

@@ -40,7 +40,15 @@ function NavBar() {
         <Navbar.Brand
           href="/"
           className="d-flex"
-          style={{ fontWeight: 800, fontSize: "1.6rem", letterSpacing: "0.5px" }}
+          style={{ 
+            fontWeight: 800, 
+            fontSize: "1.6rem", 
+            letterSpacing: "0.5px",
+            background: "linear-gradient(135deg, #c770f0, #b562d6)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            transition: "all 0.3s ease"
+          }}
         >
           Aaron.
         </Navbar.Brand>
