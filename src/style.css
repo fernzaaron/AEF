@@ -554,7 +554,7 @@ button:focus {
 .navbar-nav .nav-item a:hover {
   color: #c770f0 !important;
   transform: translateY(-3px) scale(1.05);
-  text-shadow: 0 0 10px rgba(199, 112, 240, 0.8);
+  text-shadow: none;
 }
 
 /* --------- */
@@ -1363,10 +1363,7 @@ button {
 
 /* Enhanced text highlights */
 .purple {
-  background: linear-gradient(120deg, #c770f0 0%, #b562d6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #c770f0;
 }
 
 /* Smooth scroll behavior */
@@ -1564,7 +1561,7 @@ a:focus, button:focus {
 }
 
 .main-name {
-  animation: neonPulse 3s ease-in-out infinite;
+  animation: none;
 }
 
 .heading {
@@ -1572,7 +1569,7 @@ a:focus, button:focus {
 }
 
 .purple {
-  animation: neonPulse 3s ease-in-out infinite;
+  animation: none;
 }
 
 /* --------- */
