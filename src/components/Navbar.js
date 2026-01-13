@@ -6,12 +6,9 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { CgFileDocument } from "react-icons/cg";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoMdClose } from "react-icons/io";
 
 function NavBar() {
   const [navColour, updateNavbar] = useState(false);
-  const [expand, updateExpanded] = useState(false);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -27,7 +24,7 @@ function NavBar() {
     <nav
       className={`navbar-container ${navColour ? "sticky" : ""}`}
       style={{
-        padding: "1rem 0",
+        padding: "1.5rem 0",
         backdropFilter: navColour ? "blur(10px)" : "none",
         backgroundColor: navColour ? "rgba(20, 20, 40, 0.8)" : "transparent",
         transition: "all 0.3s ease",
@@ -45,77 +42,44 @@ function NavBar() {
           maxWidth: "1200px",
           margin: "0 auto",
           width: "100%",
-          padding: "0 1rem",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
         }}
       >
         <Link
           to="/"
-          onClick={() => updateExpanded(false)}
           style={{
             textDecoration: "none",
             fontWeight: 800,
-            fontSize: "1.4rem",
+            fontSize: "clamp(1.2rem, 4vw, 1.6rem)",
             letterSpacing: "0.5px",
             background: "linear-gradient(135deg, #c770f0, #b562d6)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             cursor: "pointer",
+            flexShrink: 0,
           }}
         >
           Aaron.
         </Link>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => updateExpanded(!expand)}
-          style={{
-            display: "none",
-            background: "none",
-            border: "2px solid #c770f0",
-            borderRadius: "8px",
-            padding: "0.5rem",
-            cursor: "pointer",
-            color: "#c770f0",
-            fontSize: "1.5rem",
-            lineHeight: 1,
-          }}
-          className="mobile-menu-toggle"
-        >
-          {expand ? <IoMdClose /> : <GiHamburgerMenu />}
-        </button>
-
-        {/* Desktop Navigation */}
-        <div className="desktop-nav" style={{ display: "block" }}>
-          <SlideTabs closeMenu={() => updateExpanded(false)} />
-        </div>
+        <SlideTabs />
       </div>
 
-      {/* Mobile Navigation */}
-      {expand && (
-        <div
-          className="mobile-nav"
-          style={{
-            display: "none",
-            flexDirection: "column",
-            padding: "1rem",
-            backgroundColor: "rgba(20, 20, 40, 0.95)",
-            borderTop: "1px solid #c770f0",
-          }}
-        >
-          <MobileMenu closeMenu={() => updateExpanded(false)} />
-        </div>
-      )}
-
       <style>{`
-        @media (max-width: 768px) {
-          .mobile-menu-toggle {
-            display: block !important;
+        @media (max-width: 600px) {
+          .slide-tabs {
+            gap: 0.15rem !important;
+            padding: 0.25rem !important;
           }
-          .desktop-nav {
-            display: none !important;
+          .tab-item {
+            padding: 0.25rem 0.4rem !important;
           }
-          .mobile-nav {
-            display: flex !important;
+          .tab-link {
+            font-size: 0.65rem !important;
+          }
+          .cursor-item {
+            height: 30px !important;
           }
         }
       `}</style>
@@ -123,7 +87,7 @@ function NavBar() {
   );
 }
 
-const SlideTabs = ({ closeMenu }) => {
+const SlideTabs = () => {
   const [position, setPosition] = useState({
     left: 0,
     width: 0,
@@ -138,6 +102,7 @@ const SlideTabs = ({ closeMenu }) => {
           opacity: 0,
         }));
       }}
+      className="slide-tabs"
       style={{
         position: "relative",
         display: "flex",
@@ -145,24 +110,25 @@ const SlideTabs = ({ closeMenu }) => {
         borderRadius: "50px",
         border: "2px solid #c770f0",
         backgroundColor: "rgba(40, 20, 60, 0.6)",
-        padding: "0.25rem",
-        gap: "0.25rem",
+        padding: "0.5rem",
+        gap: "0.5rem",
         listStyle: "none",
         margin: 0,
+        flexShrink: 0,
       }}
     >
-      <Tab setPosition={setPosition} to="/" closeMenu={closeMenu}>
-        <AiOutlineHome style={{ marginRight: "5px" }} /> Home
+      <Tab setPosition={setPosition} to="/">
+        <AiOutlineHome style={{ marginRight: "5px" }} /> <span className="tab-text">Home</span>
       </Tab>
-      <Tab setPosition={setPosition} to="/about" closeMenu={closeMenu}>
-        <AiOutlineUser style={{ marginRight: "5px" }} /> About
+      <Tab setPosition={setPosition} to="/about">
+        <AiOutlineUser style={{ marginRight: "5px" }} /> <span className="tab-text">About</span>
       </Tab>
-      <Tab setPosition={setPosition} to="/project" closeMenu={closeMenu}>
+      <Tab setPosition={setPosition} to="/project">
         <AiOutlineFundProjectionScreen style={{ marginRight: "5px" }} />
-        Projects
+        <span className="tab-text">Projects</span>
       </Tab>
-      <Tab setPosition={setPosition} to="/resume" closeMenu={closeMenu}>
-        <CgFileDocument style={{ marginRight: "5px" }} /> Resume
+      <Tab setPosition={setPosition} to="/resume">
+        <CgFileDocument style={{ marginRight: "5px" }} /> <span className="tab-text">Resume</span>
       </Tab>
 
       <Cursor position={position} />
@@ -170,64 +136,13 @@ const SlideTabs = ({ closeMenu }) => {
   );
 };
 
-const MobileMenu = ({ closeMenu }) => {
-  return (
-    <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-      <MobileMenuItem to="/" closeMenu={closeMenu}>
-        <AiOutlineHome style={{ marginRight: "8px", fontSize: "1.2rem" }} /> Home
-      </MobileMenuItem>
-      <MobileMenuItem to="/about" closeMenu={closeMenu}>
-        <AiOutlineUser style={{ marginRight: "8px", fontSize: "1.2rem" }} /> About
-      </MobileMenuItem>
-      <MobileMenuItem to="/project" closeMenu={closeMenu}>
-        <AiOutlineFundProjectionScreen style={{ marginRight: "8px", fontSize: "1.2rem" }} /> Projects
-      </MobileMenuItem>
-      <MobileMenuItem to="/resume" closeMenu={closeMenu}>
-        <CgFileDocument style={{ marginRight: "8px", fontSize: "1.2rem" }} /> Resume
-      </MobileMenuItem>
-    </ul>
-  );
-};
-
-const MobileMenuItem = ({ to, children, closeMenu }) => {
-  return (
-    <li style={{ margin: "0.5rem 0" }}>
-      <Link
-        to={to}
-        onClick={closeMenu}
-        style={{
-          textDecoration: "none",
-          display: "flex",
-          alignItems: "center",
-          fontSize: "1rem",
-          fontWeight: 600,
-          color: "white",
-          padding: "0.75rem 1rem",
-          borderRadius: "8px",
-          transition: "all 0.3s ease",
-          backgroundColor: "rgba(40, 20, 60, 0.4)",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = "rgba(199, 112, 240, 0.3)";
-          e.currentTarget.style.transform = "translateX(10px)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = "rgba(40, 20, 60, 0.4)";
-          e.currentTarget.style.transform = "translateX(0)";
-        }}
-      >
-        {children}
-      </Link>
-    </li>
-  );
-};
-
-const Tab = ({ children, setPosition, to, closeMenu }) => {
+const Tab = ({ children, setPosition, to }) => {
   const ref = useRef(null);
 
   return (
     <li
       ref={ref}
+      className="tab-item"
       onMouseEnter={() => {
         if (!ref?.current) return;
 
@@ -243,17 +158,17 @@ const Tab = ({ children, setPosition, to, closeMenu }) => {
         position: "relative",
         zIndex: 10,
         cursor: "pointer",
-        padding: "0.4rem 0.8rem",
+        padding: "0.5rem 1rem",
       }}
     >
       <Link
         to={to}
-        onClick={closeMenu}
+        className="tab-link"
         style={{
           textDecoration: "none",
           display: "flex",
           alignItems: "center",
-          fontSize: "0.85rem",
+          fontSize: "0.9rem",
           fontWeight: 600,
           textTransform: "uppercase",
           color: "white",
@@ -265,6 +180,26 @@ const Tab = ({ children, setPosition, to, closeMenu }) => {
         {children}
       </Link>
     </li>
+  );
+};
+
+const Cursor = ({ position }) => {
+  return (
+    <li
+      className="cursor-item"
+      style={{
+        position: "absolute",
+        zIndex: 0,
+        height: "45px",
+        borderRadius: "50px",
+        background: "linear-gradient(135deg, #c770f0, #b562d6)",
+        pointerEvents: "none",
+        left: `${position.left}px`,
+        width: `${position.width}px`,
+        opacity: position.opacity,
+        transition: "all 0.2s ease-out",
+      }}
+    />
   );
 };
 
