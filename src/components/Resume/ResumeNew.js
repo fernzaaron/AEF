@@ -4,7 +4,7 @@ import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 
 function ResumeNew() {
-  const pdfUrl = process.env.PUBLIC_URL + "/ResumeOfAaronFernandez2026.pdf";
+  const pdfUrl = process.env.PUBLIC_URL + "/AEFAaronResume2026-2027.pdf";
 
   return (
     <div>

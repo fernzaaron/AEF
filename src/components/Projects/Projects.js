@@ -4,6 +4,7 @@ import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
 import editor from "../../Assets/Projects/codeEditor.png";
 import lostfoundSvg from "../../Assets/Projects/lostfound.svg";
+import ScrollGallery from "../ScrollGallery";
 
 function Projects() {
   return (
@@ -45,6 +46,7 @@ function Projects() {
           
         </Row>
       </Container>
+      <ScrollGallery />
     </Container>
   );
 }

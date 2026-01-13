@@ -9,6 +9,7 @@ import Github from "../About/Github";
 import { AiOutlineMail, AiFillPhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
 import Button from "react-bootstrap/Button";
+import ScrollGallery from "../ScrollGallery";
 
 function Home() {
   return (
@@ -121,6 +122,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
+      <ScrollGallery />
     </section>
   );
 }

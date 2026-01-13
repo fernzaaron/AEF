@@ -5,6 +5,7 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+import ScrollGallery from "../ScrollGallery";
 
 function About() {
   return (
@@ -50,6 +51,7 @@ function About() {
           {/* Removed GitHub widget to avoid outdated profile links */}
         </Container>
       </Container>
+      <ScrollGallery />
     </>
   );
 }
