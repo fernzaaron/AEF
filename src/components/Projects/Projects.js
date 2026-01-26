@@ -43,6 +43,19 @@ function Projects() {
               demoLink="https://aef-sigma.vercel.app/"
             />
           </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={process.env.PUBLIC_URL + "/images/phishing-detector.png"}
+              fallbackImg={editor}
+              imgAlt="Phishing URL Detector — custom project image"
+              isBlog={false}
+              title="Phishing URL Detector"
+              description="Real-time phishing detection system using multi-signal verification with 88.89% accuracy. Features 5-signal verification (URL Structure, DNS Resolution, SSL Certificate, Domain Age, Reputation), risk scoring on 0-100 scale, and intuitive web interface. Tested on 99 synthetic URLs covering 5 phishing tactics."
+              techStack="Flask, Flask-CORS, Python 3.13, JavaScript"
+              demoLink="https://cyp-1-iwms.vercel.app/"
+            />
+          </Col>
           
         </Row>
       </Container>
