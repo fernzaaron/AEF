@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
 import { Presets } from "react-component-transition";

@@ -4,11 +4,8 @@ import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
-import Techstack from "../About/Techstack";
-import Github from "../About/Github";
 import { AiOutlineMail, AiFillPhone, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
-import Button from "react-bootstrap/Button";
 import ScrollGallery from "../ScrollGallery";
 
 function Home() {
