@@ -46,7 +46,7 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={process.env.PUBLIC_URL + "/images/phishing-detector.png"}
+              imgPath={process.env.PUBLIC_URL + "/images/phishing-detector.webp"}
               fallbackImg={editor}
               imgAlt="Phishing URL Detector — custom project image"
               isBlog={false}

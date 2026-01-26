@@ -203,23 +203,4 @@ const Cursor = ({ position }) => {
   );
 };
 
-const Cursor = ({ position }) => {
-  return (
-    <li
-      style={{
-        position: "absolute",
-        zIndex: 0,
-        height: "45px",
-        borderRadius: "50px",
-        background: "linear-gradient(135deg, #c770f0, #b562d6)",
-        pointerEvents: "none",
-        left: `${position.left}px`,
-        width: `${position.width}px`,
-        opacity: position.opacity,
-        transition: "all 0.2s ease-out",
-      }}
-    />
-  );
-};
-
 export default NavBar;
